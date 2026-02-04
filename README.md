@@ -1,33 +1,26 @@
-# SKIA UI Renderer Enabler Magisk Module
+# SKIA UI Vulkan Enabler (Fork)
 
-## Descriptions
-- Enabler changes debug.hwui.renderer to skiavk if device hardware supports vulkan or changes to skiagl if it doesn't support vulkan.
-- Disabler changes debug.hwui.renderer back to vulkan or opengl. (READ the Optionals bellow!)
-- What is SKIA? Read here: https://skia.org
+This module is a simplified and forced fork of the original [SKIA UI Renderer Enabler](https://github.com/reiryuki/SKIA-UI-Renderer-Enabler-Magisk-Module).
+
+## Description
+This fork forcibly enables **Skia Vulkan (SkiaVK)** rendering for the Android UI system.
+Unlike the original module which offers switching options, this version is hardcoded to:
+- Force `debug.hwui.renderer` to `skiavk`
+- Force `debug.renderengine.backend` to `skiavkthreaded`
+
+This is intended for devices where you explicitly want to enforce Vulkan rendering for better performance or compatibility, removing the legacy OpenGL fallback logic.
 
 ## Requirements
-- Magisk/KernelSU/Apatch/Kitsune Mask installed
+- Magisk, KernelSU, Apatch, or Kitsune Mask
+- Android device with hardware Vulkan support
 
-## Installation Guide & Download Link
-- Install this module https://www.pling.com/p/2286108/ via Magisk/KernelSU/Apatch/Kitsune Mask app or Recovery if Magisk/Kitsune Mask installed.
-- You don't need to reboot if installing via app because it applies immediately at installation, but keep this module installed to apply it in every device boot.
+## Installation
+Flash via your root manager (Magisk/KSU/etc).
+The module applies properties immediately, but a reboot is recommended to ensure the render engine initializes correctly with the new backend.
 
-## Optionals
-- https://t.me/ryukinotes/83
-- Global: https://t.me/ryukinotes/35
+## Credits & Upstream
+- **Original Author**: [Rei Ryuki the Fixer](https://github.com/reiryuki/SKIA-UI-Renderer-Enabler-Magisk-Module)
+- **Fork Author**: IQUXAe
 
-## Troubleshootings
-- Global: https://t.me/ryukinotes/34
-
-## Support & Bug Report
-- https://t.me/ryukinotes/54
-- If you don't do above, issues will be closed immediately and ignored.
-
-## Credits and Contributors
-- https://t.me/androidryukimodsdiscussions
-- You can contribute ideas about this Magisk Module here: https://t.me/androidappsportdevelopment
-
-## Sponsors
-- https://t.me/ryukinotes/25
-
-
+For support regarding the **original** functionality, please refer to the original repository.
+For issues specific to this forced-Vulkan implementation, open an issue in this repository.
